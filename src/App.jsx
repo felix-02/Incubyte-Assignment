@@ -1,4 +1,4 @@
-import StringCalculator from "./page/StringCalculator";
+import StringCalculator from "./pages/StringCalculator";
 import { stringCalculatorTests } from "./tests/string-calculator-tests";
 import "./App.css";
 
