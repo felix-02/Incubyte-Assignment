@@ -1,4 +1,6 @@
 export function addNumbers(numbers) {
+  numbers = numbers.trim().replace(/\\n/g, "\n");
+
   let del = ",";
 
   if (numbers.startsWith("//")) {
