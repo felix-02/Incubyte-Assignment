@@ -14,4 +14,17 @@ export function stringCalculatorTests() {
   // support diff delimeters at the start
   console.log(addNumbers("//;\n1;2")); // 3
   console.log(addNumbers("//|\n1|2|3")); // 6
+
+  // Exception cases
+  try {
+    console.log(addNumbers("1,-2,3")); // Throws: "Negatives not allowed: -2"
+  } catch (e) {
+    console.error(e.message);
+  }
+
+  try {
+    console.log(addNumbers("//;\n1;-2;-3")); // Throws: "Negatives not allowed: -2, -3"
+  } catch (e) {
+    console.error(e.message);
+  }
 }

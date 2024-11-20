@@ -7,7 +7,12 @@ export function addNumbers(numbers) {
     numbers = restOfNumbers;
   }
 
-  let arr = numbers.replaceAll("\n", del).split(del);
+  let arr = numbers.replaceAll("\n", del).split(del).map(Number);
 
-  return arr.map((itm) => +itm).reduce((acc, curr) => acc + curr, 0);
+  const negatives = arr.filter((num) => num < 0);
+  if (negatives.length > 0) {
+    throw new Error(`Negatives not allowed: ${negatives.join(", ")}`);
+  }
+
+  return arr.reduce((acc, curr) => acc + curr, 0);
 }
