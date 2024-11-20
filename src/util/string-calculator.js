@@ -1,6 +1,5 @@
 export function addNumbers(numbers) {
-  return numbers
-    .split(",")
-    .map((itm) => +itm)
-    .reduce((acc, curr) => acc + curr, 0);
+  let arr = numbers.replaceAll("\n", ",").split(",");
+
+  return arr.map((itm) => +itm).reduce((acc, curr) => acc + curr, 0);
 }
